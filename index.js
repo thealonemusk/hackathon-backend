@@ -50,7 +50,7 @@ app.post('/updateDeliveryArea', express.json(), (req, res) => {
 
 app.get('/updates', (req, res) => {
   const driverId = req.params.driverId;
-  const driverLocation = driverLocations[driverId];
+  const driverLocation = driverLocations;
 
   if (!driverLocation) {
     res.status(404).send('No driver location found');
