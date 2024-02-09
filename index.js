@@ -8,8 +8,8 @@ const port = 3000;
 
 app.use(morgan('combined'));
 app.use(express.json());
-
-let driverLocations = { latitude: 40.7128, longitude: -74.0060 };
+// -122.45,37.91
+let driverLocations = { latitude: -122.45, longitude: 37.91 };
 let deliveryAreaPolygon =  [
   [40.7128, -74.0060], // New York City
   [40.7128, -73.9352], // Brooklyn
