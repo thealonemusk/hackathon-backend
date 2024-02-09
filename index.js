@@ -9,8 +9,14 @@ const port = 3000;
 app.use(morgan('combined'));
 app.use(express.json());
 
-let driverLocations = {};
-let deliveryAreaPolygon = null;
+let driverLocations = { latitude: 40.7128, longitude: -74.0060 };
+let deliveryAreaPolygon =  [
+  [40.7128, -74.0060], // New York City
+  [40.7128, -73.9352], // Brooklyn
+  [40.7488, -73.9352], // Queens
+  [40.7488, -74.0060], // Manhattan
+  [40.7128, -74.0060] // Closing point (back to NYC)
+];
 app.use(cors());
 
 app.post('/updateLocation', (req, res) => {
